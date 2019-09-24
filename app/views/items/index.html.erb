@@ -1,16 +1,13 @@
 <div class="container">
-  <div class="row mt-5 mb-3">
-    <% @items.each do |item| %>
-      <div class="card" style="width: 18rem;">
-        <img src="<%= item.image_url %>" class="card-img-top">
-        <div class="card-body">
-          <h5 class="card-title"><%= item.title %></h5>
-          <p class="card-text"><%= item.description %></p>
-          <a href="<%= item_path(item) %>" class="btn btn-primary">자세히보기</a>
-        </div>
-      </div>
-    <% end %>
-    <br>
+
+  <%= form_tag(items_path, class: "form-inline my-2 my-lg-0", remote: true, method: :get) do %>
+     <input class="form-control mr-sm-2" name="keyword" type="search" placeholder="Search" aria-label="Search">
+     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+  <% end %>
+
+  <div class="row mt-5 mb-3" id="search_result">
+    <%= render 'items/search', items: @items %>
   </div>
+  <br>
   <%= link_to "상품 등록", new_item_path %>
 </div>

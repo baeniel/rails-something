@@ -3,7 +3,16 @@ class ItemsController < ApplicationController
   before_action :load_object, only: [:edit, :destroy, :update, :show]
 
   def index
-    @items = Item.all
+    if params[:keyword].present?
+      keyword = params[:keyword].split(" ").map{|e| "\'%#{e}%\'"}.join(", ")
+      @items = Item.where("title ilike any(array[#{keyword}]) or  description ilike any(array[#{keyword}])")
+      respond_to do |format|
+        format.js
+      end
+    else
+      @items = Item.all
+    end
+
   end
 
   def edit
