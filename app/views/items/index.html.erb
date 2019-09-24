@@ -1,14 +1,16 @@
 <div class="container">
-  <% @items.each do |item| %>
-    <div class="card" style="width: 18rem;">
-      <img src="<%= item.image_url %>" class="card-img-top">
-      <div class="card-body">
-        <h5 class="card-title"><%= item.title %></h5>
-        <p class="card-text"><%= item.description %></p>
-        <a href="<%= item_path(item) %>" class="btn btn-primary">자세히보기</a>
+  <div class="row mt-5 mb-3">
+    <% @items.each do |item| %>
+      <div class="card" style="width: 18rem;">
+        <img src="<%= item.image_url %>" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title"><%= item.title %></h5>
+          <p class="card-text"><%= item.description %></p>
+          <a href="<%= item_path(item) %>" class="btn btn-primary">자세히보기</a>
+        </div>
       </div>
-    </div>
-  <% end %>
-  <br>
-  <%= link_to "상품 등록", item_new_path %>
+    <% end %>
+    <br>
+  </div>
+  <%= link_to "상품 등록", new_item_path %>
 </div>

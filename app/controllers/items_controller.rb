@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  before_action :authenticate_user!, only: [:edit, :destroy, :create, :update]
   before_action :load_object, only: [:edit, :destroy, :update, :show]
 
   def index
@@ -17,7 +18,9 @@ class ItemsController < ApplicationController
 
   def create
     item = Item.new(item_params)
+    item.user = current_user
     item.save
+    redirect_to root_path
   end
 
   def update
