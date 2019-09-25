@@ -4,7 +4,7 @@ class Order < ApplicationRecord
 
   enum status: [:required, :completed, :canceled]
 
-  scope :not_required, -> { where.not(status: :required) }
+  scope :completed, -> { where(status: :completed) }
   # scope :cancled, -> { where.(created_at: nil) }
 
 end

@@ -1,6 +1,6 @@
 class Item < ApplicationRecord
    mount_uploader :image, ImageUploader
-   has_many_attached :images
+   # has_many_attached :images
 
    belongs_to :user, optional: true
    belongs_to :order, optional: true
