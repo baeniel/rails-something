@@ -4,8 +4,7 @@ class ItemsController < ApplicationController
 
   def index
     if params[:keyword].present?
-      keyword = params[:keyword].split(" ").map{|e| "\'%#{e}%\'"}.join(", ")
-      @items = Item.where("title ilike any(array[#{keyword}]) or  description ilike any(array[#{keyword}])")
+      @items = Item.ransack(title_or_description_cont: params[:keyword]).result(distinct: true)
       respond_to do |format|
         format.js
       end

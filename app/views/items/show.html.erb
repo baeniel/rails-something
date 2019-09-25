@@ -2,4 +2,12 @@
   <h3>상품 상세페이지</h3>
   <%= @item.title %> <br>
   <%= @item.description %>
+  <%= image_tag @item.image_url %>
+
+  <br>
+  <%= form_for Order.new do |f| %>
+    <%= f.hidden_field :item_id, value: @item.id %>
+    <%= f.submit "장바구니 담기" %>
+  <% end %>
+
 </div>
