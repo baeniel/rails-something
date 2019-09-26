@@ -10,6 +10,7 @@ gem 'devise'
 gem 'ransack'
 gem 'aws-sdk-s3'
 gem 'activeadmin'
+gem 'activeadmin_addons'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

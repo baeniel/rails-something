@@ -1,7 +1,18 @@
 ActiveAdmin.register Order do
 
   scope :all
+  scope :required
   scope :completed
+
+  action_item :update, only: :show do
+    link_to "구매완료", admin_order_path(order), method: :put if order.required?
+  end
+
+  member_action :update, method: :put do
+    order = Order.find params[:id]
+    order.update(status: :completed)
+    redirect_to admin_orders_path
+  end
 
   index do
     selectable_column
