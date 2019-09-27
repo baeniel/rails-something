@@ -4,7 +4,22 @@
   <%= @item.description %>
   <%= image_tag @item.image_url %>
 
-  <br>
+
+  <h4>댓글달기</h4>
+  <%= form_for ([@item, @comment]) do |f| %>
+    <%= f.label :body, '내용' %>
+    <%= f.text_field :body %>
+    <%= f.submit '작성' %>
+  <% end %>
+
+  <ul>
+    <% @comments.each do |comment| %>
+      <li><%= comment.body %></li>
+    <% end %>
+  </ul>
+
+
+
   <%= form_for Order.new do |f| %>
     <%= f.hidden_field :item_id, value: @item.id %>
     <%= f.submit "장바구니 담기" %>

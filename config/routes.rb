@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   devise_for :users, controllers: { registrations: 'users/registrations', sessions: 'users/sessions' }
   root 'items#index'
-  resources :items
+  resources :items do
+    resources :comments
+  end
   resources :orders
 end

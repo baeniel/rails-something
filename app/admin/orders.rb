@@ -1,5 +1,4 @@
 ActiveAdmin.register Order do
-
   scope :all
   scope :required
   scope :completed
