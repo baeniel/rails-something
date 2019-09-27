@@ -5,8 +5,9 @@ class CommentsController < ApplicationController
   end
 
   def create
-    item = Item.find params[:item_id]
-    comment = item.comments.new(comment_params)
+    comment = Comment.new(comment_params)
+    comment.commentable_id = params[:item_id]
+    comment.commentable_type = "Item"
     comment.user = current_user
     comment.save
     redirect_back(fallback_location: root_path)

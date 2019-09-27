@@ -6,7 +6,9 @@
 
 
   <h4>댓글달기</h4>
-  <%= form_for ([@item, @comment]) do |f| %>
+  <%= form_for [@item, @comment] do |f| %>
+    <%#= f.hidden_field :commentable_id, value: @item.id %>
+    <%#= f.hidden_field :commentable_type, value: "Item" %>
     <%= f.label :body, '내용' %>
     <%= f.text_field :body %>
     <%= f.submit '작성' %>
