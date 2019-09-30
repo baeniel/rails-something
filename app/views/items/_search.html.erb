@@ -1,3 +1,5 @@
+
+
 <% items.order(:created_at).each do |item| %>
   <div class="card" style="width: 18rem;">
     <img src="<%= item.image_url %>" class="card-img-top">
@@ -8,3 +10,5 @@
     </div>
   </div>
 <% end %>
+
+<%= paginate items, remote: true %>

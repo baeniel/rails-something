@@ -11,6 +11,7 @@ gem 'ransack'
 gem 'aws-sdk-s3'
 gem 'activeadmin'
 gem 'activeadmin_addons'
+gem 'kaminari'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

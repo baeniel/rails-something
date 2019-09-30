@@ -4,14 +4,10 @@ class ItemsController < ApplicationController
 
   def index
     if params[:keyword].present?
-      @items = Item.ransack(title_or_description_cont: params[:keyword]).result(distinct: true)
-      respond_to do |format|
-        format.js
-      end
+      @items = Item.ransack(title_or_description_cont: params[:keyword]).result(distinct: true).page(params[:page]).per(4)
     else
-      @items = Item.all
+      @items = Item.page(params[:page]).per(4)
     end
-
   end
 
   def edit
