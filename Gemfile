@@ -13,6 +13,14 @@ gem 'activeadmin'
 gem 'activeadmin_addons'
 gem 'kaminari'
 
+# sns login
+gem 'omniauth'
+gem 'omniauth-oauth2', '<= 1.3.1'
+gem 'omniauth-naver'
+gem 'omniauth-facebook'
+gem 'omniauth-kakao', '<= 0.1.2'
+gem 'figaro'
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'

@@ -3,6 +3,15 @@
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
+
+  # naver login
+  # config.omniauth :naver, ENV["NAVER_APP_ID"], ENV["NAVER_SECRET_KEY"]
+  # facebook login
+  config.omniauth :facebook, ENV["Facebook_Key"], ENV["Facebook_Secret"]
+  # kakao login
+  config.omniauth :kakao, ENV["KAKAO_CLIENT_ID"], :redirect_path => "/users/auth/kakao/callback"
+
+
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
