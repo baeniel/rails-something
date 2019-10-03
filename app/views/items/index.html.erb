@@ -1,6 +1,6 @@
 <div class="container">
 
-  <% if current_user %>
+  <% if user_signed_in? %>
     <%= link_to "로그아웃", destroy_user_session_path, method: :delete %>
   <% else %>
     <%= link_to "회원가입", new_user_registration_path %>

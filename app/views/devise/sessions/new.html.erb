@@ -24,8 +24,8 @@
     </div>
   <% end %>
 
-  <%= link_to "facebook login", '#' %> <br>
-  <%= link_to "github login", '#' %> <br>
+  <%= link_to "facebook login", user_facebook_omniauth_callback_path %> <br>
+  <%= link_to "kakao login", user_kakao_omniauth_callback_path %> <br>
   <%= link_to "google login", '#' %> <br>
 
   <%= render "devise/shared/links" %>
