@@ -14,8 +14,8 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     auth_login("facebook")
   end
 
-  def google
-    auth_login("google")
+  def google_oauth2
+    auth_login("google_oauth2")
   end
 
   private

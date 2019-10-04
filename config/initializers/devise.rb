@@ -10,7 +10,7 @@ Devise.setup do |config|
   config.omniauth :facebook, ENV["Facebook_Key"], ENV["Facebook_Secret"]
   # kakao login
   config.omniauth :kakao, ENV["KAKAO_CLIENT_ID"], :redirect_path => "/users/auth/kakao/callback"
-  config.omniauth :google, ENV["GOOGLE_CLIENT_ID"], ENV["GOOGLE_CLIENT_SECRET"]
+  config.omniauth :google_oauth2, ENV["GOOGLE_CLIENT_ID"], ENV["GOOGLE_CLIENT_SECRET"], {}
 
 
   # The secret key used by Devise. Devise uses this key to generate

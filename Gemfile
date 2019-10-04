@@ -14,9 +14,7 @@ gem 'activeadmin_addons'
 gem 'kaminari'
 
 # sns login
-gem 'omniauth'
-gem 'omniauth-oauth2', '<= 1.3.1'
-gem 'omniauth-naver'
+gem 'omniauth-oauth2', '~> 1.3.1'
 gem 'omniauth-facebook'
 gem 'omniauth-kakao', '<= 0.1.2'
 gem 'omniauth-google-oauth2'

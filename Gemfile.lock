@@ -224,8 +224,6 @@ GEM
     omniauth-kakao (0.1.2)
       omniauth (~> 1.0)
       omniauth-oauth2 (~> 1.1)
-    omniauth-naver (0.2.0)
-      omniauth-oauth2 (~> 1.2)
     omniauth-oauth2 (1.3.1)
       oauth2 (~> 1.0)
       omniauth (~> 1.2)
@@ -367,12 +365,10 @@ DEPENDENCIES
   jquery-rails
   kaminari
   listen (>= 3.0.5, < 3.2)
-  omniauth
   omniauth-facebook
   omniauth-google-oauth2
   omniauth-kakao (<= 0.1.2)
-  omniauth-naver
-  omniauth-oauth2 (<= 1.3.1)
+  omniauth-oauth2 (~> 1.3.1)
   pg (>= 0.18, < 2.0)
   puma (~> 3.11)
   rails (~> 5.2.3)
