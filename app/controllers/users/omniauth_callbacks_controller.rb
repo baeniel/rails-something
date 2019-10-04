@@ -4,7 +4,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   before_action :set_identity
   before_action :set_user
 
-  attr_reader :identity, :user
+  # attr_reader :identity, :user
 
   def kakao
     auth_login("kakao")
@@ -14,21 +14,21 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     auth_login("facebook")
   end
 
-  # def after_sign_in_path_for(resource)
-  #   root_path
-  # end
+  def google
+    auth_login("google")
+  end
 
   private
 
   def auth_login(provider)
-    if identity.present?
-      identity.update(identity_attrs)
+    if @identity.present?
+      @identity.update(identity_attrs)
     else
-      user.identities.create(identity_attrs)
+      @user.identities.create(identity_attrs)
     end
-    sign_in user
+    sign_in @user
     if user_signed_in?
-      redirect_to root_path, notice: "you signed in with #{provider} account"
+      redirect_to root_path, notice: "you signed in with #{@user.name} account"
     else
       redirect_to root_path, notice: "you failed to login"
     end
@@ -39,14 +39,14 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   end
 
   def set_identity
-    @identity = Identity.where(provider: auth.provider, uid: auth.uid).first
+    @identity = Identity.find_by(provider: auth.provider, uid: auth.uid)
   end
 
   def set_user
     if user_signed_in?
       @user = current_user
-    elsif identity.present?
-      @user = identity.user
+    elsif @identity.present?
+      @user = @identity.user
     elsif User.where(email: auth.info.email).any?
       flash[:alert] = "login with another account that has #{auth.provider}"
     else

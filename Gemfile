@@ -19,6 +19,7 @@ gem 'omniauth-oauth2', '<= 1.3.1'
 gem 'omniauth-naver'
 gem 'omniauth-facebook'
 gem 'omniauth-kakao', '<= 0.1.2'
+gem 'omniauth-google-oauth2'
 gem 'figaro'
 
 
