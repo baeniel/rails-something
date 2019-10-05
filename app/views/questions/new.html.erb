@@ -1,0 +1,10 @@
+<div class="container">
+  <h3>질i 등록</h3>
+  <%= form_for Question.new, class: "form-input" do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title, class: "form-control" %>
+    <%= f.integer_field :position, class: "form-control" %>
+    <%= f.submit "등록" %>
+  <% end %>
+
+</div>

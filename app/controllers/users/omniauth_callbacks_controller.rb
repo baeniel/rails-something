@@ -28,7 +28,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     end
     sign_in @user
     if user_signed_in?
-      redirect_to root_path, notice: "you signed in with #{@user.name} account"
+      redirect_to root_path, notice: "you signed in with #{provider} account"
     else
       redirect_to root_path, notice: "you failed to login"
     end

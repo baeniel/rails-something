@@ -3,9 +3,10 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   devise_for :users, controllers: { registrations: 'users/registrations', sessions: 'users/sessions',
     omniauth_callbacks: 'users/omniauth_callbacks' }
-  root 'items#index'
+  root 'questions#index'
   resources :items do
     resources :comments
   end
   resources :orders
+  resources :questions
 end

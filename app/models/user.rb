@@ -10,4 +10,6 @@ class User < ApplicationRecord
   has_many :comments, as: :commentable, dependent: :destroy
 
   has_many :identities, dependent: :destroy
+  has_many :questions, -> { order(position: :asc) }, dependent: :destroy
+
 end

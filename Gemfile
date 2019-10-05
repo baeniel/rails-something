@@ -20,6 +20,11 @@ gem 'omniauth-kakao', '<= 0.1.2'
 gem 'omniauth-google-oauth2'
 gem 'figaro'
 
+#sortalbe
+gem 'jquery-ui-rails', '~> 5.0', '>= 5.0.5'
+gem 'acts_as_list'
+gem 'activeadmin_reorderable'
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
