@@ -2,8 +2,11 @@
   <h3>상품 상세페이지</h3>
   <%= @item.title %> <br>
   <%= @item.description %>
-  <%= image_tag @item.image_url %>
 
+  <h5>images</h5>
+  <% @item.images.each do |image| %>
+    <%= image_tag image.variant(resize: "100 x100") %>
+  <% end %>
 
   <h4>댓글달기</h4>
   <%= form_for [@item, @comment] do |f| %>

@@ -22,6 +22,7 @@ class ItemsController < ApplicationController
 
   def create
     item = Item.new(item_params)
+    byebug
     item.user = current_user
     item.save
     redirect_to root_path
@@ -42,7 +43,7 @@ class ItemsController < ApplicationController
   end
 
   def item_params
-    params.require(:item).permit(:title, :description, :image)
+    params.require(:item).permit(:title, :description, {images: []})
   end
 
 end

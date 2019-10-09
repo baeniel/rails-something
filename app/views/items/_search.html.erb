@@ -2,7 +2,8 @@
 
 <% items.order(:created_at).each do |item| %>
   <div class="card" style="width: 18rem;">
-    <img src="<%= item.image_url %>" class="card-img-top">
+    <!-- <img src="<%#= item.images.first %>" class="card-img-top"> -->
+    <%= image_tag item.images.last.variant(resize: "100 x100"), class: "card-img-top" %>
     <div class="card-body">
       <h5 class="card-title"><%= item.title %></h5>
       <p class="card-text"><%= item.description %></p>

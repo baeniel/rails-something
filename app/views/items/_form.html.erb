@@ -3,7 +3,7 @@
   <%= f.text_field :title, class: "form-control" %>
   <%= f.label :description %>
   <%= f.text_field :description, class: "form-control" %>
-  <%= f.label :image %>
-  <%= f.file_field :image, class: "form-control" %>
+  <%= f.label :images %>
+  <%= f.file_field :images, multiple:true, class: "form-control" %>
   <%= f.submit "등록" %>
 <% end %>
