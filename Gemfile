@@ -5,7 +5,7 @@ ruby '2.4.2'
 
 gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
-gem 'carrierwave', '~> 2.0'
+gem 'carrierwave', '~> 2.1'
 gem 'devise'
 gem 'ransack'
 gem 'aws-sdk-s3'
